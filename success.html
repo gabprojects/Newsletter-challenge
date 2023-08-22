@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Success!</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <div class="container-success">
+            <div class="container-message">
+                <img class="icon-success" src="assets/images/icon-success.svg" alt="icon of success">
+                <h1 class="container-title">Thanks for subscribing!</h1>
+                <p id="user-email"></p>
+            </div>
+            <a class="button-success" href="index.html">
+                <p>Dismiss message</p>
+            </a>
+        </div>
+    </main>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const userEmail = urlParams.get('email');
+        const userEmailElement = document.getElementById('user-email');
+        if (userEmail) {
+            userEmailElement.innerHTML = `A confirmation email has been sent to <span class="email-bold">${userEmail}</span>.
+                Please open it and click the button inside to confirm your subscription.`;
+        }
+    </script>
+</body>
+
+</html>
